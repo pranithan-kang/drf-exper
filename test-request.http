@@ -1,0 +1,36 @@
+POST http://127.0.0.1:8000/snippets/
+Content-Type: application/json
+
+{
+    "code": "print(123)"
+}
+
+###
+POST http://127.0.0.1:8000/snippets/
+Authorization: Basic userforauthtest:123456
+Content-Type: application/json
+
+{
+    "code": "print(789)"
+}
+
+###
+GET http://127.0.0.1:8000/snippets/
+
+###
+GET http://127.0.0.1:8000/snippets/1/
+
+###
+PUT http://127.0.0.1:8000/snippets/2/
+Authorization: Basic userforauthtest:123456
+Content-Type: application/json
+
+{
+    "highlight": "http://127.0.0.1:8000/snippets/2/highlight",
+    "owner": "userforauthtest",
+    "title": "lorem ipsum",
+    "code": "sql testing \n\n```sql\nselect * from testing\n```",
+    "linenos": true,
+    "language": "markdown",
+    "style": "native"
+}
